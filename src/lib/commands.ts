@@ -6,8 +6,7 @@ const COMMANDS = {
   /projects     - View my projects
   /education    - Education details
   /contact      - Contact information
-  /clear        - Clear terminal
-  /resume       - Download resume`,
+  /clear        - Clear terminal`,
 
   about: () => `Full Stack Developer | Pune, India
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

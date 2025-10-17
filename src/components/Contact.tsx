@@ -70,7 +70,7 @@ export default function Contact() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <a
             href="https://niraj-chordia.vercel.app/resume"
             target="_blank"
@@ -79,7 +79,7 @@ export default function Contact() {
           >
             📄 Download Resume
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );
