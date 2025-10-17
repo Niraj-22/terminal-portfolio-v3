@@ -35,6 +35,11 @@
 
     --cursor-size: 40px;
     --cursor-hover-size: 80px;
+    /* Grid/Background effect color (rgb) and alpha for subtle grid lines */
+    --grid-r: 0;
+    --grid-g: 255;
+    --grid-b: 0;
+    --grid-alpha: 0.03;
   }
 
   /* Light Theme Colors */
@@ -64,6 +69,11 @@
     --border: 210 40% 80%;
     --input: 210 40% 95%;
     --ring: 180 70% 50%;
+    /* grid color for light theme: royal dark blue so it shows on a white background */
+    --grid-r: 14;
+    --grid-g: 35;
+    --grid-b: 102;
+    --grid-alpha: 0.12;
   }
 }
 

@@ -11,7 +11,13 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Background effects */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,0,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `linear-gradient(rgba(var(--grid-r),var(--grid-g),var(--grid-b),var(--grid-alpha)) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--grid-r),var(--grid-g),var(--grid-b),var(--grid-alpha)) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px',
+        }}
+      />
       <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-pulse" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
 
