@@ -1,4 +1,4 @@
-import { useState, KeyboardEvent } from "react";
+import { useState, useRef, useEffect, KeyboardEvent } from "react";
 
 interface TerminalInputProps {
   onCommand: (command: string) => void;
@@ -14,11 +14,27 @@ export function TerminalInput({
   isLoading,
 }: TerminalInputProps) {
   const [input, setInput] = useState("");
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    // focus on mount
+    inputRef.current?.focus();
+  }, []);
+
+  useEffect(() => {
+    // if loading finished, refocus the input so user can continue typing
+    if (!isLoading) {
+      // use requestAnimationFrame to ensure DOM updates settle
+      requestAnimationFrame(() => inputRef.current?.focus());
+    }
+  }, [isLoading]);
 
   const handleSubmit = () => {
     if (input.trim() && !isLoading) {
       onCommand(input);
       setInput("");
+      // ensure focus returns to the input after submitting
+      requestAnimationFrame(() => inputRef.current?.focus());
     }
   };
 
@@ -53,7 +69,7 @@ export function TerminalInput({
         className="flex-1 bg-transparent text-primary outline-none placeholder-muted-foreground disabled:opacity-50 font-mono text-xs sm:text-sm"
         placeholder="Type a command..."
         autoComplete="off"
-        autoFocus
+        ref={inputRef}
       />
       {!isLoading && <span className="terminal-cursor" />}
       {isLoading && (
