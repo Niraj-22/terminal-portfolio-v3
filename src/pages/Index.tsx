@@ -14,7 +14,7 @@ const Index = () => {
   const [showTerminal, setShowTerminal] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background transition-colors duration-300">
       <CustomCursor />
       <ScrollToTop isTerminalOpen={showTerminal} />
       <Navigation onTerminalClick={() => setShowTerminal(!showTerminal)} />
@@ -28,7 +28,7 @@ const Index = () => {
 
       {showTerminal && <TerminalWidget onClose={() => setShowTerminal(false)} />}
 
-      <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border">
+      <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border transition-colors duration-300">
         <p>© 2025 Niraj Chordia. Built with React, TypeScript & Tailwind CSS.</p>
       </footer>
     </div>

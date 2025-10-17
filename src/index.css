@@ -2,42 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Dark Theme (Default) */
 @layer base {
   :root {
     --background: 220 25% 6%;
     --foreground: 120 100% 50%;
-    
+
     --terminal-bg: 220 28% 4%;
     --terminal-border: 120 100% 35%;
     --terminal-glass: 120 100% 50%;
-    
+
     --card: 220 25% 8%;
     --card-foreground: 120 100% 50%;
-    
+
     --primary: 120 100% 50%;
     --primary-foreground: 220 25% 6%;
-    
+
     --secondary: 120 80% 35%;
     --secondary-foreground: 120 100% 95%;
-    
+
     --muted: 220 20% 15%;
     --muted-foreground: 120 30% 60%;
-    
+
     --accent: 120 100% 50%;
     --accent-foreground: 220 25% 6%;
-    
+
     --border: 120 100% 35%;
     --input: 220 20% 12%;
     --ring: 120 100% 50%;
-    
+
     --radius: 0.5rem;
-    
+
     --cursor-size: 40px;
     --cursor-hover-size: 80px;
+  }
+
+  /* Light Theme Colors */
+  [data-theme="light"] {
+    --background: 210 60% 98%;
+    --foreground: 210 15% 20%;
+
+    --terminal-bg: 210 40% 95%;
+    --terminal-border: 210 50% 80%;
+    --terminal-glass: 210 60% 90%;
+
+    --card: 210 50% 97%;
+    --card-foreground: 210 15% 20%;
+
+    --primary: 180 70% 50%;
+    --primary-foreground: 210 60% 95%;
+
+    --secondary: 300 60% 60%;
+    --secondary-foreground: 210 60% 95%;
+
+    --muted: 210 30% 85%;
+    --muted-foreground: 210 20% 40%;
+
+    --accent: 50 100% 80%;
+    --accent-foreground: 210 15% 20%;
+
+    --border: 210 40% 80%;
+    --input: 210 40% 95%;
+    --ring: 180 70% 50%;
   }
 }
 
@@ -45,14 +71,16 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-  
+
   body {
-    @apply bg-background text-foreground cursor-none;
-    font-family: 'Courier New', Courier, monospace;
+    @apply bg-background text-foreground cursor-none transition-colors duration-300;
+    font-family: "Courier New", Courier, monospace;
   }
-  
+
   /* Hide default cursor */
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     cursor: none !important;
   }
 }
@@ -60,30 +88,37 @@ All colors MUST be HSL.
 /* Terminal styles */
 @layer components {
   .terminal-container {
-    @apply bg-terminal-bg border-2 border-terminal-border rounded-lg;
+    @apply bg-terminal-bg border-2 border-terminal-border rounded-lg transition-colors duration-300;
     @apply shadow-[0_0_30px_rgba(0,255,0,0.3)];
     backdrop-filter: blur(10px);
-    box-shadow: 
-      0 0 30px rgba(0, 255, 0, 0.3),
-      0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3), 0 10px 40px rgba(0, 0, 0, 0.5);
   }
-  
+
+  [data-theme="light"] .terminal-container {
+    box-shadow: 0 0 30px rgba(0, 150, 136, 0.2), 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
   .terminal-glow {
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    transition: text-shadow 0.3s ease;
   }
-  
+
+  [data-theme="light"] .terminal-glow {
+    text-shadow: 0 0 10px rgba(0, 150, 136, 0.4);
+  }
+
   .terminal-line {
-    @apply text-primary font-mono;
+    @apply text-primary font-mono transition-colors duration-300;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-  
+
   .terminal-prompt {
-    @apply text-secondary font-bold;
+    @apply text-secondary font-bold transition-colors duration-300;
   }
-  
+
   .terminal-cursor {
-    @apply inline-block w-2 h-5 bg-primary animate-pulse ml-1;
+    @apply inline-block w-2 h-5 bg-primary animate-pulse ml-1 transition-colors duration-300;
   }
 }
 
@@ -99,32 +134,47 @@ All colors MUST be HSL.
       transform: translateY(0);
     }
   }
-  
+
   @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
-  
+
   @keyframes cursor-blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
   }
-  
+
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
-  
+
   .animate-fade-in {
     animation: fade-in 0.6s ease-out both;
   }
-  
+
   .animate-typing {
     overflow: hidden;
     white-space: nowrap;
     animation: typing 2s steps(40, end);
   }
-  
+
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }

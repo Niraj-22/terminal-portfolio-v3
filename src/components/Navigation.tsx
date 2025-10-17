@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Terminal, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface NavigationProps {
   onTerminalClick: () => void;
@@ -28,11 +29,10 @@ export default function Navigation({ onTerminalClick }: NavigationProps) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-background/90 backdrop-blur-lg border-b border-border shadow-lg"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -70,6 +70,10 @@ export default function Navigation({ onTerminalClick }: NavigationProps) {
               <Terminal className="w-4 h-4" />
               Terminal
             </Button>
+            {/* Theme toggle (inline style) */}
+            <div className="inline-block ml-3">
+              <ThemeToggle inline />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -81,6 +85,8 @@ export default function Navigation({ onTerminalClick }: NavigationProps) {
             >
               <Terminal className="w-4 h-4" />
             </Button>
+            {/* Mobile Theme Toggle */}
+            <ThemeToggle inline className="ml-0" />
             <Button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               variant="outline"
