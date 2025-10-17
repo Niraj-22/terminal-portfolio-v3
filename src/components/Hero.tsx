@@ -1,9 +1,26 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Terminal } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
   const scrollToAbout = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const roles = ["Frontend Developer", "Full Stack Developer", "Gamer"];
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  const [displayedRole, setDisplayedRole] = useState(roles[0]);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRoleIndex((r) => (r + 1) % roles.length);
+    }, 2500);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    setDisplayedRole(roles[roleIndex]);
+  }, [roleIndex]);
 
   return (
     <section
@@ -14,10 +31,12 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `linear-gradient(rgba(var(--grid-r),var(--grid-g),var(--grid-b),var(--grid-alpha)) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--grid-r),var(--grid-g),var(--grid-b),var(--grid-alpha)) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px',
+          // stronger repeating grid: 2px line thickness every 50px
+          backgroundImage: `repeating-linear-gradient(0deg, rgba(var(--grid-r),var(--grid-g),var(--grid-b),var(--grid-alpha)) 0 2px, transparent 2px 50px), repeating-linear-gradient(90deg, rgba(var(--grid-r),var(--grid-g),var(--grid-b),var(--grid-alpha)) 0 2px, transparent 2px 50px)`,
         }}
       />
+      {/* Animated dots train overlay */}
+      <div className="grid-dots" aria-hidden />
       <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-pulse" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
 
@@ -28,12 +47,16 @@ export default function Hero() {
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 terminal-glow animate-fade-in">
+        <h1 className="flex items-center justify-center gap-3 text-5xl md:text-7xl font-bold mb-6 terminal-glow animate-fade-in">
+          <span className="flex items-center gap-2">
+            <Terminal className="w-7 h-7 text-primary" />
+          </span>
           NIRAJ CHORDIA
         </h1>
 
         <p className="text-xl md:text-2xl text-secondary mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Full Stack Developer
+          <span>{displayedRole}</span>
+          <span className="type-caret" aria-hidden />
         </p>
 
         <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
@@ -66,6 +89,7 @@ export default function Hero() {
           <ArrowDown className="w-6 h-6 text-primary" />
         </button>
       </div>
+      {/* icons removed per request; role switcher added above */}
     </section>
   );
 }
