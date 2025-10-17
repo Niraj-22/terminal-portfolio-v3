@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 6%;
+    --foreground: 120 100% 50%;
+    
+    --terminal-bg: 220 28% 4%;
+    --terminal-border: 120 100% 35%;
+    --terminal-glass: 120 100% 50%;
+    
+    --card: 220 25% 8%;
+    --card-foreground: 120 100% 50%;
+    
+    --primary: 120 100% 50%;
+    --primary-foreground: 220 25% 6%;
+    
+    --secondary: 120 80% 35%;
+    --secondary-foreground: 120 100% 95%;
+    
+    --muted: 220 20% 15%;
+    --muted-foreground: 120 30% 60%;
+    
+    --accent: 120 100% 50%;
+    --accent-foreground: 220 25% 6%;
+    
+    --border: 120 100% 35%;
+    --input: 220 20% 12%;
+    --ring: 120 100% 50%;
+    
+    --radius: 0.5rem;
+    
+    --cursor-size: 40px;
+    --cursor-hover-size: 80px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground cursor-none;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  /* Hide default cursor */
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+/* Terminal styles */
+@layer components {
+  .terminal-container {
+    @apply bg-terminal-bg border-2 border-terminal-border rounded-lg;
+    @apply shadow-[0_0_30px_rgba(0,255,0,0.3)];
+    backdrop-filter: blur(10px);
+    box-shadow: 
+      0 0 30px rgba(0, 255, 0, 0.3),
+      0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  .terminal-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  }
+  
+  .terminal-line {
+    @apply text-primary font-mono;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .terminal-prompt {
+    @apply text-secondary font-bold;
+  }
+  
+  .terminal-cursor {
+    @apply inline-block w-2 h-5 bg-primary animate-pulse ml-1;
+  }
+}
+
+/* Animations */
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out both;
+  }
+  
+  .animate-typing {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
