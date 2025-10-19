@@ -30,8 +30,8 @@ export default function Navigation({ onTerminalClick }: NavigationProps) {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-background/90 backdrop-blur-lg border-b border-border shadow-lg"
-          : "bg-transparent"
+        ? "bg-background/90 backdrop-blur-lg border-b border-border shadow-lg"
+        : "bg-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -51,6 +51,7 @@ export default function Navigation({ onTerminalClick }: NavigationProps) {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
+                aria-label={section}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors capitalize relative group"
               >
                 {section}
@@ -66,6 +67,7 @@ export default function Navigation({ onTerminalClick }: NavigationProps) {
               variant="outline"
               size="sm"
               className="gap-2"
+              aria-label="Terminal Toggle"
             >
               <Terminal className="w-4 h-4" />
               Terminal
@@ -82,6 +84,7 @@ export default function Navigation({ onTerminalClick }: NavigationProps) {
               onClick={onTerminalClick}
               variant="outline"
               size="sm"
+              aria-label="Mobile Menu Toggle"
             >
               <Terminal className="w-4 h-4" />
             </Button>
@@ -91,6 +94,7 @@ export default function Navigation({ onTerminalClick }: NavigationProps) {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               variant="outline"
               size="sm"
+              aria-label="Mobile Theme Toggle"
             >
               {mobileMenuOpen ? (
                 <X className="w-4 h-4" />
@@ -109,6 +113,7 @@ export default function Navigation({ onTerminalClick }: NavigationProps) {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
+                  aria-label={section}
                   className="text-left text-sm text-muted-foreground hover:text-primary transition-colors capitalize py-2"
                 >
                   {section}
