@@ -1,7 +1,7 @@
 const experiences = [
   {
     period: "JUL 2024 - PRESENT",
-    title: "Software Engineer (Frontend)",
+    title: "Software Engineer",
     company: "DViO Digital",
     location: "Hybrid Role",
     achievements: [
