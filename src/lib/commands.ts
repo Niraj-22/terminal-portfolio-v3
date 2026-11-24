@@ -40,7 +40,7 @@ TOOLS & PLATFORMS
 
   experience: () => `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-[JUL 2024 - PRESENT] Software Engineer (Frontend) @ DViO Digital
+[JUL 2024 - PRESENT] Software Engineer @ DViO Digital
 📌 Hybrid Role
 
 Key Achievements:
