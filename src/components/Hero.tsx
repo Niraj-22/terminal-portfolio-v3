@@ -1,15 +1,14 @@
 import { ArrowDown, Terminal } from "lucide-react";
 import { useEffect, useState } from "react";
 
+const roles = ["Full Stack Engineer", "AI & Voice Systems Engineer", "Team Lead"];
+
 export default function Hero() {
   const scrollToAbout = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const roles = ["Frontend Developer", "Full Stack Developer", "Gamer"];
   const [roleIndex, setRoleIndex] = useState(0);
-
-  const [displayedRole, setDisplayedRole] = useState(roles[0]);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -18,9 +17,7 @@ export default function Hero() {
     return () => clearInterval(id);
   }, []);
 
-  useEffect(() => {
-    setDisplayedRole(roles[roleIndex]);
-  }, [roleIndex]);
+  const displayedRole = roles[roleIndex];
 
   return (
     <section
@@ -60,11 +57,11 @@ export default function Hero() {
         </p>
 
         <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          Building scalable web applications with React, TypeScript, Node.js, and Python.
-          1.5+ years of experience crafting exceptional digital experiences.
+          Building production AI voice, RAG, and full-stack systems with React, Node.js, Python, FastAPI, and AWS.
+          2+ years of experience shipping scalable products.
         </p>
 
-        <div className="flex gap-4 justify-center mb-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+        <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <a
             href="https://github.com/Niraj-22"
             target="_blank"
@@ -74,10 +71,12 @@ export default function Hero() {
             View GitHub
           </a>
           <a
-            href="mailto:niraj22chordia@gmail.com"
+            href="/Niraj_Chordia_Resume (1).pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors font-medium"
           >
-            Get in Touch
+            View Résumé
           </a>
         </div>
 

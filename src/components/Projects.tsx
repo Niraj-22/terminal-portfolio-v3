@@ -1,18 +1,27 @@
-import { GitGraphIcon, } from "lucide-react";
+import { GitGraphIcon } from "lucide-react";
 
 const projects = [
   {
-    title: "ClientConnect",
-    description: "Customer segmentation platform leveraging RFM analysis and K-Means clustering (96.3% accuracy) for targeted marketing campaigns.",
-    tech: ["React.js", "Python", "Machine Learning", "Data Analytics"],
-    metrics: "35% faster backend response times",
-    github: "https://github.com/Niraj-22/clientconnect",
+    title: "AngelTel",
+    description:
+      "A multi-tenant AI voice call-center platform with real-time streaming, interruption handling, noise cancellation, and provider orchestration across STT, TTS, and LLMs.",
+    tech: ["React", "Node.js", "FastAPI", "LiveKit", "Twilio", "PostgreSQL"],
+    metrics: "1,000+ calls/day | 100+ concurrent campaigns",
   },
   {
-    title: "Marketing Analytics Platform",
-    description: "Full-stack solution integrating 20+ data connectors with optimized ETL pipelines. Delivers unified multi-channel campaign analytics for faster stakeholder decision-making.",
-    tech: ["React.js", "Python", "Node.js", "Snowflake", "Airbyte"],
-    metrics: "3+ industry awards | 90% cost reduction",
+    title: "AI Faculty",
+    description:
+      "An educational AI platform with a 24/7 student doubt-resolution chatbot grounded in syllabus content using a Qdrant-backed RAG pipeline.",
+    tech: ["React", "RAG", "Qdrant", "LLMs", "Node.js", "FastAPI"],
+    metrics: "Curriculum-accurate answers | Major institution partnership",
+  },
+  {
+    title: "ClientConnect",
+    description:
+      "Customer segmentation platform using RFM analysis and K-Means clustering for data-driven campaign targeting.",
+    tech: ["React.js", "Node.js", "MongoDB", "Python", "scikit-learn"],
+    metrics: "35% faster responses | JWT & RBAC",
+    github: "https://github.com/Niraj-22/clientconnect",
   },
 ];
 
@@ -24,17 +33,16 @@ export default function Projects() {
           <span className="text-secondary">./</span>projects
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <div
               key={project.title}
-              className="p-6 rounded-lg border border-border bg-card/50 backdrop-blur-sm hover:border-primary transition-all duration-300 hover:scale-105 animate-fade-in"
+              className="p-6 rounded-lg border border-border bg-card/50 backdrop-blur-sm hover:border-primary transition-all duration-300 hover:scale-[1.02] animate-fade-in"
               style={{ animationDelay: `${idx * 0.2}s` }}
             >
               <h3 className="text-2xl font-bold mb-3 text-primary">
                 {project.title}
               </h3>
-
               <p className="text-muted-foreground mb-4">
                 {project.description}
               </p>
@@ -54,20 +62,17 @@ export default function Projects() {
                 📊 {project.metrics}
               </p>
 
-              <div className="flex gap-4">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-primary hover:underline"
-                  >
-                    <GitGraphIcon className="w-4 h-4" />
-                    Source
-                  </a>
-                )}
-
-              </div>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-primary hover:underline"
+                >
+                  <GitGraphIcon className="w-4 h-4" />
+                  Source
+                </a>
+              )}
             </div>
           ))}
         </div>

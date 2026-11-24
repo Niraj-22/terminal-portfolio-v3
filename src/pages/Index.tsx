@@ -29,7 +29,7 @@ const Index = () => {
       {showTerminal && <TerminalWidget onClose={() => setShowTerminal(false)} />}
 
       <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border transition-colors duration-300">
-        <p>© 2025 Niraj Chordia. Built with React, TypeScript & Tailwind CSS.</p>
+        <p>© 2026 Niraj Chordia. Built with React, TypeScript & Tailwind CSS.</p>
       </footer>
     </div>
   );

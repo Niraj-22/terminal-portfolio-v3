@@ -1,4 +1,4 @@
-import { Mail, Phone, Github, Linkedin, Globe } from "lucide-react";
+import { Mail, Phone, Github, Linkedin, FileText } from "lucide-react";
 
 const contactLinks = [
   {
@@ -25,12 +25,12 @@ const contactLinks = [
     value: "Niraj Chordia",
     href: "https://www.linkedin.com/in/niraj-c-683170247",
   },
-  // {
-  //   icon: Globe,
-  //   label: "Portfolio",
-  //   value: "niraj-chordia.vercel.app",
-  //   href: "https://niraj-chordia.vercel.app",
-  // },
+];
+
+const resumeLinks = [
+  { label: "Full-stack résumé", href: "/Niraj_Chordia_Resume (1).pdf" },
+  { label: "Agentic AI résumé", href: "/Niraj_Chordia_Resume_Agentic.pdf" },
+  { label: "Engineering résumé", href: "/Niraj_Chordia_Resume_FullStack.pdf" },
 ];
 
 export default function Contact() {
@@ -70,16 +70,23 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* <div className="mt-12 text-center">
-          <a
-            href="https://niraj-chordia.vercel.app/resume"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:scale-105 transition-transform font-medium"
-          >
-            📄 Download Resume
-          </a>
-        </div> */}
+        <div className="mt-12">
+          <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+            <FileText className="w-5 h-5 text-primary" /> Download résumé
+          </h3>
+          <div className="flex flex-wrap gap-3">
+            {resumeLinks.map((resume) => (
+              <a
+                key={resume.label}
+                href={resume.href}
+                download
+                className="px-5 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors font-medium"
+              >
+                {resume.label}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

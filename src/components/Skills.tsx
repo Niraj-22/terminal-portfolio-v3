@@ -2,35 +2,37 @@ const skillCategories = [
   {
     title: "Frontend",
     skills: [
-      { name: "React.js", level: 90 },
+      { name: "React / Next.js", level: 95 },
       { name: "TypeScript", level: 90 },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "Redux", level: 75 },
+      { name: "Tailwind CSS", level: 90 },
+      { name: "Redux / Zustand", level: 85 },
     ],
   },
   {
-    title: "Backend",
+    title: "Backend & Systems",
     skills: [
-      { name: "Node.js", level: 90 },
-      { name: "Python", level: 85 },
-      { name: "Express.js", level: 75 },
+      { name: "Node.js / Express", level: 95 },
+      { name: "Python / FastAPI", level: 90 },
+      { name: "REST / GraphQL", level: 85 },
+      { name: "Microservices", level: 85 },
     ],
   },
   {
-    title: "Databases",
+    title: "AI, Voice & RAG",
     skills: [
-      { name: "MongoDB", level: 90 },
-      { name: "Snowflake", level: 90 },
-      { name: "PostgreSQL", level: 85 },
+      { name: "LLM Applications / Agents", level: 90 },
+      { name: "RAG / LangChain / Qdrant", level: 90 },
+      { name: "LiveKit / WebRTC / SIP", level: 85 },
+      { name: "OpenAI / Claude / Gemini", level: 85 },
     ],
   },
   {
-    title: "Tools & Platforms",
+    title: "Cloud & Databases",
     skills: [
-      { name: "Docker", level: 80 },
-      { name: "Git", level: 90 },
-      { name: "AWS", level: 75 },
-      { name: "CI/CD", level: 80 },
+      { name: "AWS / Docker", level: 85 },
+      { name: "PostgreSQL / MongoDB", level: 90 },
+      { name: "Redis / Snowflake", level: 85 },
+      { name: "Terraform / CloudWatch", level: 80 },
     ],
   },
 ];
@@ -53,7 +55,7 @@ export default function Skills() {
               <h3 className="text-xl font-semibold mb-6 text-primary">
                 {category.title}
               </h3>
-              
+
               <div className="space-y-4">
                 {category.skills.map((skill) => (
                   <div key={skill.name}>
