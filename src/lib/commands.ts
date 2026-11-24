@@ -5,98 +5,136 @@ const COMMANDS = {
   /experience   - See work experience
   /projects     - View my projects
   /education    - Education details
+  /resume       - View résumé options
   /contact      - Contact information
   /clear        - Clear terminal`,
 
-  about: () => `Full Stack Developer | Pune, India
+  about: () => `FULL STACK ENGINEER | AI, VOICE AI & RAG SYSTEMS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Results-driven Full Stack Developer with 1.5+ years of experience designing 
-and deploying scalable web applications. Expertise in React.js, TypeScript, 
-Python, and Node.js with proven track record optimizing performance, 
-integrating third-party APIs, and mentoring teams.
+Full-stack engineer with 2+ years of experience shipping production systems
+end to end, from React/Next.js frontends to Node.js and FastAPI services on AWS.
+
+Team lead owning architecture, code reviews, sprint delivery and engineering
+execution for multi-tenant AI and voice platforms serving 1,000+ calls/day.
 
 📍 Location: Pune, Maharashtra, India
-🎓 Education: B.E. Computer Science (CGPA: 9.05) - Trinity Academy of Engineering`,
+🎓 Education: B.E. Computer Science (CGPA: 9.05/10.0)
+🏫 Trinity Academy of Engineering, Pune`,
 
-  skills: () => `FRONTEND TECHNOLOGIES
-  ▓▓▓▓▓▓▓▓▓░ React.js
-  ▓▓▓▓▓▓▓▓▓░ TypeScript
+  skills: () => `FRONTEND
+  ▓▓▓▓▓▓▓▓▓░ React.js / Next.js
+  ▓▓▓▓▓▓▓▓▓░ TypeScript / JavaScript
   ▓▓▓▓▓▓▓▓░░ Tailwind CSS
-  ▓▓▓▓▓▓▓░░░ Redux
+  ▓▓▓▓▓▓▓▓░░ Redux / Zustand / TanStack Query
 
-BACKEND TECHNOLOGIES
-  ▓▓▓▓▓▓▓▓▓░ Node.js
-  ▓▓▓▓▓▓▓▓░░ Python
-  ▓▓▓▓▓▓▓░░░ Express.js
+BACKEND & SYSTEMS
+  ▓▓▓▓▓▓▓▓▓░ Node.js / Express.js
+  ▓▓▓▓▓▓▓▓░░ Python / FastAPI
+  ▓▓▓▓▓▓▓▓░░ REST / GraphQL / Microservices
+  ▓▓▓▓▓▓▓▓░░ JWT / RBAC / Multi-tenancy
 
-DATABASES
-  ▓▓▓▓▓▓▓▓▓░ MongoDB
-  ▓▓▓▓▓▓▓▓▓░ Snowflake
-  ▓▓▓▓▓▓▓▓░░ MySQL, PostgreSQL
+AI, VOICE & RAG
+  ▓▓▓▓▓▓▓▓▓░ LLM Applications / AI Agents
+  ▓▓▓▓▓▓▓▓░░ RAG / LangChain / Qdrant
+  ▓▓▓▓▓▓▓▓░░ LiveKit / WebRTC / SIP / Twilio
+  ▓▓▓▓▓▓▓▓░░ OpenAI / Claude / Gemini
 
-TOOLS & PLATFORMS
-  Docker | Git | AWS | Linux | CI/CD | Agile/Scrum`,
+DATABASES & CLOUD
+  ▓▓▓▓▓▓▓▓▓░ PostgreSQL / MongoDB
+  ▓▓▓▓▓▓▓▓░░ Redis / Snowflake / Prisma
+  ▓▓▓▓▓▓▓▓░░ AWS / Docker / Nginx
+  ▓▓▓▓▓▓▓░░░ Terraform / CloudWatch / Playwright`,
 
   experience: () => `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-[JUL 2024 - PRESENT] Software Engineer @ DViO Digital
-📌 Hybrid Role
+[FEB 2026 - PRESENT] Full Stack Developer (Team Lead) @ Vsynergize AI
+📌 Pune, India
 
 Key Achievements:
-  ✓ Architected Martech Analytics Dashboard integrating 20+ third-party 
-    connectors (Google Ads, Meta Ads, Snowflake)
-  ✓ Migrated legacy Vue.js frontend to React Router v7
-  ✓ Implemented Anthropic AI API for automated insights
-  ✓ Enhanced SSR performance by 40% | Platform adoption ↑ 25%
-  ✓ Streamlined operational costs by 90%
-  ✓ Product awarded 3+ industry recognition awards
+  ✓ Lead engineering across AI Faculty and AngelTel
+  ✓ Own architecture, sprint planning, delegation and code reviews
+  ✓ Built AngelTel, handling 1,000+ calls/day
+  ✓ Engineered LiveKit, Twilio and SIP voice pipelines
+  ✓ Implemented JWT, RBAC and tenant isolation across 100+ campaigns
+  ✓ Built a 24/7 Qdrant-backed RAG student doubt-resolution chatbot
+  ✓ Led the AI Faculty demo that secured a major institution partnership
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-[JAN 2024 - FEB 2024] Full Stack Developer Trainee @ O2h Technology
-📌 Ahmedabad
+[JUL 2024 - JAN 2026] Software Development Engineer I @ DViO Digital
+📌 Pune / Hybrid
 
 Key Achievements:
-  ✓ Developed full-stack resource management platform (MERN stack)
-  ✓ Enhanced page speed by 30% | Reduced bounce rates by 15%`,
+  ✓ Delivered an award-winning Martech Analytics Dashboard
+  ✓ Integrated 20+ APIs including Google Ads, Meta Ads and Snowflake
+  ✓ Integrated Anthropic Claude, lifting engagement by 35%
+  ✓ Improved Core Web Vitals by 40% and adoption by 25%
+  ✓ Cut operational costs by 90% through custom ETL automation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[JAN 2024 - MAR 2024] Full Stack Developer Intern @ O2h Technology
+📌 Ahmedabad, India
+
+Key Achievements:
+  ✓ Built a full-stack resource management platform with the MERN stack
+  ✓ Improved performance by 30% using Redis and React lazy loading
+  ✓ Reduced bounce rates by 15%`,
 
   projects: () => `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📁 PROJECT 1: ClientConnect
+📁 PROJECT 1: AngelTel — AI Voice Call-Center Platform
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Description:
+Multi-tenant voice AI platform with real-time streaming, interruption
+handling, noise cancellation and orchestration across STT, TTS and LLM providers.
+
+Tech Stack: React | Node.js | FastAPI | PostgreSQL | LiveKit | Twilio | SIP
+Metrics: 1,000+ calls/day | 100+ concurrent campaigns
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📁 PROJECT 2: AI Faculty — RAG Education Platform
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Description:
+A 24/7 student doubt-resolution chatbot grounded in syllabus content.
+
+Tech Stack: React | Node.js | FastAPI | Qdrant | RAG | LLMs
+Impact: Curriculum-accurate answers without human intervention
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📁 PROJECT 3: ClientConnect — Customer Segmentation
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🔗 GitHub: https://github.com/Niraj-22/clientconnect
 
 Description:
-Customer segmentation platform leveraging RFM analysis and K-Means 
-clustering (96.3% accuracy) for targeted marketing campaigns.
+RFM and K-Means clustering platform for data-driven campaign targeting.
 
-Tech Stack: React.js | Python | Machine Learning | Data Analytics
-Metrics: 35% faster backend response times
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📁 PROJECT 2: Marketing Analytics Platform
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🔗 DViO Digital | Currently Live
-
-Description:
-Full-stack solution integrating 20+ data connectors with optimized ETL 
-pipelines. Delivers unified multi-channel campaign analytics for faster 
-stakeholder decision-making.
-
-Tech Stack: React.js | Python | Node.js | Snowflake | Airbyte
-Impact: 3+ industry awards | 90% cost reduction`,
+Tech Stack: React.js | Node.js | MongoDB | Python | scikit-learn
+Metrics: 35% faster responses | JWT authentication | RBAC`,
 
   education: () => `🎓 BACHELOR OF ENGINEERING IN COMPUTER SCIENCE
    Trinity Academy of Engineering, Pune
-   Graduation: 2024
+   June 2020 – May 2024
    CGPA: 9.05/10.0
 
 Key Highlights:
-  ✓ Consistent academic excellence
-  ✓ Focus on full-stack development and data analytics
-  ✓ Hands-on experience with modern web technologies`,
+  ✓ Strong full-stack development foundation
+  ✓ Artificial intelligence and data analytics experience
+  ✓ Production-focused software engineering`,
+
+  resume: () => `📄 AVAILABLE RÉSUMÉS
+
+  /Niraj_Chordia_Resume (1).pdf
+  Full-stack, AI systems and voice infrastructure
+
+  /Niraj_Chordia_Resume_Agentic.pdf
+  Agentic AI, voice AI and RAG systems
+
+  /Niraj_Chordia_Resume_FullStack.pdf
+  Full-stack engineering and scalable cloud systems`,
 
   contact: () => `📧 Email: niraj22chordia@gmail.com
 📱 Phone: +91-9422571198
@@ -104,18 +142,9 @@ Key Highlights:
 🌐 SOCIAL PROFILES
   ├─ GitHub: https://github.com/Niraj-22
   ├─ LinkedIn: https://www.linkedin.com/in/niraj-c-683170247
-  ├─ Portfolio: https://niraj-chordia.vercel.app
-  └─ Email: niraj22chordia@gmail.com
+  └─ Portfolio: https://niraj-chordia.vercel.app
 
-💬 Let's connect! Open to opportunities and collaborations.`,
-
-  // resume: () => `📄 DOWNLOAD RESUME
-  //  Your resume is ready for download!
-
-  //  [DOWNLOAD PDF] ↓
-
-  //  Alternatively, view online:
-  //  https://niraj-chordia.vercel.app/resume`,
+💬 Open to full-stack, AI systems and engineering leadership opportunities.`,
 
   clear: () => "CLEAR_SCREEN",
 };
